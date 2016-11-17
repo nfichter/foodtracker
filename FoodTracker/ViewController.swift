@@ -17,6 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(selectImageFromPhotoLibrary))
+        photoImageView.addGestureRecognizer(tap)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -48,7 +51,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     // MARK: Actions
     
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+    func selectImageFromPhotoLibrary() {
+        print("yay")
         nameTextField.resignFirstResponder()
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
