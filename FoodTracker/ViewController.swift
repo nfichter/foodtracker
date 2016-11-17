@@ -52,7 +52,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // MARK: Actions
     
     func selectImageFromPhotoLibrary() {
-        print("yay")
         nameTextField.resignFirstResponder()
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
